@@ -1,0 +1,59 @@
+@import "../variables.scss";
+
+nav {
+    display: flex;
+    align-items: center;
+    background-color: $green-deer-sign;
+    justify-content: space-between;
+    padding: 20px 80px;
+    height: 59px;
+    font-family: $font;
+
+    #navbar {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        li {
+            list-style: none;
+            padding: 0 10px;
+            position: relative;
+
+            span {
+                font-size: 24px;
+                color: $white;
+                font-weight: bold;
+            }
+    
+            #logout-icon {
+                color: $white;
+                cursor: pointer;
+                width: 24px;
+                height: 24px;
+            }
+
+            a {
+                text-decoration: none;
+                font-size: 1.3rem;
+                font-weight: 600;
+                color: $white;
+                transition: 0.3s ease-in-out;
+            }
+
+            a:hover{
+                color: $yellow-deer-sign;
+            }
+
+            a:hover::after, 
+            a.active::after{
+                content: "";
+                width: 30%;
+                height: 2px;
+                background: $yellow-deer-sign;
+                position: absolute;
+                bottom: -4px;
+                left: 20px;
+            }
+        }
+    }
+}

@@ -1,0 +1,92 @@
+@import "../variables.scss";
+
+.body {
+    height: 100vh;
+    font-family: $font;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $white;
+
+    .login-container {
+        background: $gray;
+        height: 500px;
+        width: 520px;
+        margin: 0 auto;
+        border-radius: 5px;
+        box-shadow: 0px 4px 30px -5px rgba(0,0,0,0.65);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .login-logo {
+            margin-bottom: 20px;
+        }
+
+        .login-input-container {
+            position: relative;
+            margin-bottom: 30px;
+            width: 340px;
+        }
+
+        input, button {
+            letter-spacing: 1.3px
+        }
+
+        input {
+            box-sizing: border-box;
+            background: transparent;
+            width: 100%;
+            border: none;
+            border-bottom: 1px solid $yellow-deer-sign;
+            color: $yellow-deer-sign;
+            padding: 12px 6px 12px 36px;
+            font-size: 19px;
+            outline: none;
+            caret-color: $yellow-deer-sign;
+        }
+
+        input:focus {
+            border-bottom: 1px solid transparent;
+            border-image-slice: 1;
+        }
+
+        input:focus + .login-icons {
+            color: $green-deer-sign;
+        }
+
+        ::placeholder {
+            color: $light-gray;
+        }
+
+        .login-icons {
+            color: $medium-gray;
+            position: absolute;
+            left: 6px;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: color .3s;
+        }
+
+        button {
+            background-color: $yellow-deer-sign;
+            border: none;
+            border-radius: 30px;
+            font-size: 16px;
+            padding: 16px 36px;
+            color: $white;
+            cursor: pointer;
+            margin-top: 20px;
+            margin-bottom: -30px;
+            box-shadow: 0px 4px 15px -5px rgba(0,0,0,0.65);
+            transition: all .3s;
+        }
+
+        button:hover {
+            background: lighten($green-deer-sign, 5%);
+            box-shadow: 0px 5px 20px -3px rgba(0,0,0,0.65);
+        }
+    }
+}

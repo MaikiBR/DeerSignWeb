@@ -1,43 +1,40 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import logo from "../Media/LOGO_verde.png"
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faUser, faAsterisk } from '@fortawesome/free-solid-svg-icons'
 
-import '../SCSS/_login.scss'
+import '../SCSS/Elements/_login.scss'
 
 const Login = () => {
+  const navigate = useNavigate();
+
+  const logUser = () => {
+    navigate("/dashboard");
+  }
+
   return (
-    <div>
+    <div className="body">
+      <div className="login-container">
+        <img 
+          src={logo}
+          width="30%"
+          height="30%"
+          className="login-logo"
+        />
+        <div className="login-input-container">
+          <input type="email" placeholder="Email"/>
+          <FontAwesomeIcon icon={faUser} className="login-icons"/>
+        </div>
+        <div className="login-input-container">
+          <input type="password" placeholder="Password"/>
+          <FontAwesomeIcon icon={faAsterisk} className="login-icons"/>
+        </div>
 
-    <div class="imagen">    
-      <img src="logoini.png" alt=""/>
+        <button type="submit" onClick={() => logUser()}>ENTRAR</button>
+      </div>
     </div>
-  
-   
-      <form>
-        <h1>Iniciar sesión</h1>
-    
-        <div class="forms">
-          <i class='fa fa-envelope'></i>
-          <input type="email" id="floatingInput" placeholder="Email"/>
-        </div>
-
-        <div class="forms">
-          <i class='fa fa-key'></i>
-          <input type="password"  id="floatingPassword" placeholder="Password"/>
-        </div>
-    
-        <div class="forms">
-          <label>
-            <input type="checkbox" value="remember-me"/> Remember me
-          </label>
-        </div>
-        <div class="boton">
-          <button type="submit">Iniciar Sesion</button>
-        </div>
-      </form>
-
-
-  </div>
   );
 }
 export default Login;
