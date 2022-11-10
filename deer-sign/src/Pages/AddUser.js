@@ -39,7 +39,7 @@ const AddUser = () => {
                     </div>
                     <div className="input-container">
                         <span className="input-span">Correo electrónico</span>
-                        <input className="input-field" type="text" placeholder="Ingresa el correo electrónico" required/>
+                        <input className="input-field" type="email" placeholder="Ingresa el correo electrónico" required/>
                     </div>
                     <div className="input-container">
                         <span className="input-span">Contraseña</span>
