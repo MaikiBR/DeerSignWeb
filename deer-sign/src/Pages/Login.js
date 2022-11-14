@@ -71,8 +71,9 @@ export default class Login extends Component {
           <input type="password" placeholder="Password" onChange={(e) => this.setState({ password: e.target.value })}/>
           <FontAwesomeIcon icon={faAsterisk} className="login-icons"/>
         </div>
-        
-        <button type="submit" >ENTRAR</button>
+        <div className="login-button-container">
+          <button type="submit" >ENTRAR</button>
+        </div>
         </form>
       </div>
       
