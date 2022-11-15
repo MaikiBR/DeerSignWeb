@@ -1,1 +1,29 @@
 @import "../variables.scss";
+
+.dashboard-container {
+    margin: 0 auto;
+    padding: 0;
+}
+
+.table {
+    position:relative;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
+
+.bar-chart-container{
+    margin-left: 200px;
+    margin-top: 50px;
+    width: 100vh;
+    height: 60vh;
+    display: inline-flex;
+}
+
+.doughnut-chart-container {
+    margin-left: 10%;
+    width: 50vh;
+    height:50vh;
+    display: inline-block;
+}
