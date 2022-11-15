@@ -6,15 +6,42 @@ import logo from "../Media/LOGO_verde.png"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser, faAsterisk } from '@fortawesome/free-solid-svg-icons'
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import '../SCSS/Elements/_login.scss'
 
 //const Login = () => {
   
-  //const navigate = useNavigate();
+  const successAlert = () => {
+    toast.success("Login exitoso. Bienvenido!", {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
 
+    });
+  }
+
+  const errorAlert = () => {
+    toast.error("Los datos ingresados no corresponden a un usuario registrado. Vuelve a intentarlo.", {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+
+    });
+  }
   //const logUser = () => { navigate("/dashboard"); }
   
 export default class Login extends Component {
+  
     //---------
     constructor(props) {
       super(props);
@@ -45,10 +72,15 @@ export default class Login extends Component {
         .then((data) => {
           console.log(data, "userRegister1");
           if (data.status == "ok") {
-            alert("login successful");
+            successAlert();
             window.localStorage.setItem("token", data.data);
-            window.location.href = "./Dashboard";
+            setTimeout(() => {
+              window.location.href = "./dashboard";
+            }, 3600);
           }
+        }, (error) => {
+          errorAlert();
+          console.log(error);
         });
     }
   render (){
@@ -56,6 +88,7 @@ export default class Login extends Component {
     
     <div className="body">
       <div className="login-container">
+      <ToastContainer />
         <img 
           src={logo}
           width="30%"
@@ -72,7 +105,7 @@ export default class Login extends Component {
           <FontAwesomeIcon icon={faAsterisk} className="login-icons"/>
         </div>
         <div className="login-button-container">
-          <button type="submit" >ENTRAR</button>
+          <button className="login-button" type="submit" >ENTRAR</button>
         </div>
         </form>
       </div>

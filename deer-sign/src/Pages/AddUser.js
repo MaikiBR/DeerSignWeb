@@ -7,8 +7,36 @@ import Navbar from "../Components/Navbar/Navbar";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons'
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import '../SCSS/Elements/_adduser.scss'
+
+const successAlert = () => {
+    toast.success("Creación de usuario exitosa.", {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+
+    });
+  }
+
+  const errorAlert = () => {
+    toast.error("", {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+
+    });
+  }
 
 export default class SignUp extends Component {
     ///
@@ -50,7 +78,12 @@ export default class SignUp extends Component {
       })
         .then((res) => res.json())
         .then((data) => {
-          console.log(data, "userRegister2");
+            //alert("Usuario agregado exitosamente.")
+            successAlert();
+            console.log(data, "userRegister2");
+        }, (error) => {
+            errorAlert();
+            console.log(error);
         });
     }
     render(){
@@ -59,6 +92,7 @@ export default class SignUp extends Component {
         <div>
         <Navbar />
         <div className="add-content">
+        <ToastContainer />
             <div className="container">
                 <div className="page-title">AGREGAR USUARIO</div>
                 <form onSubmit={this.handleSubmit}>

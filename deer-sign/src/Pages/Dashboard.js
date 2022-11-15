@@ -30,6 +30,7 @@ import '../SCSS/Elements/_dashboard.scss'
         .then((res) => res.json())
         .then((data) => {
           console.log(data, "userData");
+          localStorage.setItem("username", data.data.userN);
           this.setState({ userData: data.data });
         });
     }

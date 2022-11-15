@@ -30,7 +30,7 @@ function Navbar(){
                 <div>
                     <ul id="navbar">
                         <li><a href="/agregaruser">Agregar</a></li>
-                        <li><span>Hola, Usuario</span></li>
+                        <li><span>Hola, {localStorage.getItem("username")}</span></li>
                         <li onClick={() => logoutUser()}><FontAwesomeIcon icon={faRightFromBracket} id="logout-icon"/></li>
                     </ul>
                 </div>
