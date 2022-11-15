@@ -119,7 +119,7 @@ const doughnutData = {
         </div>
 
         <div class="myTable">
-          <table class="table" id="ex-table">
+          <table class="table table-secondary" id="ex-table">
             <thead class="thead-light">
               <tr id="tr">
                 <th scope="col">ID Empleado</th>
