@@ -12,7 +12,7 @@ const BarChart =() => {
     const data2 = {
       labels: labels,
       datasets: [{
-        axis: 'y',
+        indexAxis: 'y',
         data: [65, 59, 80],
         fill: false,
         backgroundColor: [
@@ -30,8 +30,20 @@ const BarChart =() => {
     };
 
     return (
-        <div>
-            <Bar data = {data2}/>
+        <div className="bar-chart-container">
+            <Bar data={data2}
+          options={{
+            title:{
+              display:true,
+              indexAxis: 'y',
+              text:'Bar Data Chart',
+              fontSize:20
+            },
+            legend:{
+              display:true,
+              position:'right'
+            }
+          }}/>
         </div>
     );
 };
