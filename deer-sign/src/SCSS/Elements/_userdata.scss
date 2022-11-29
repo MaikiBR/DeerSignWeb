@@ -41,6 +41,7 @@
 
 #third-section {
     height: 80vh;
+    overflow-y:auto;
 }
 
 .section-spans {
@@ -99,6 +100,11 @@
     height: 54px;
     color: $white;
 }
+.card-icon.num {
+    width: 45px;
+    height: 45px;
+    color: $white;
+}
 
 .card-title {
     font-family: Roboto;
@@ -128,21 +134,88 @@
 }
 
 #verbs-card {
-    background-color: #3CA99B;
-}
-
-#drinks-card {
     background-color: #c238eb;
 }
 
-#tools-card {
+#verbs-card-two {
     background-color: #929292;
+}
+
+#drinks-card {
+    background-color: #3CA99B;
 }
 
 #animals-card {
     background-color: #d68227;
 }
 
+#body-card {
+    background-color: #84C18E;
+}
+
+#days-card {
+    background-color: #60CEC3;
+}
+
+#fruits-card {
+    background-color: #6089CE;
+}
+
+#vegies-card {
+    background-color: #9B62BC;
+}
+
+#places-card {
+    background-color: #D48295;
+}
+
+#months-card {
+    background-color: #BB82D4;
+}
+
+#num-card {
+    background-color: #E6B872;
+}
+
+#house-card {
+    background-color: #E68D72;
+}
+
+#people-card {
+    background-color: #E6DF72;
+}
+
+#questions-card {
+    background-color: #C0E672;
+}
+
+#prep-card {
+    background-color: #81E672;
+}
+
+#pron-card {
+    background-color: #DE81DE;
+}
+
+#work-card {
+    background-color: #81CEDE;
+}
+
+#clothes-card {
+    background-color: #5EC480;
+}
+
+#time-card {
+    background-color: #7D85B3;
+}
+
+#transport-card {
+    background-color: #B07DB3;
+}
+
+#greetings-card {
+    background-color: #DA8C8C;
+}
 
 /*.row > div {
     border: 1px dotted;
