@@ -20,10 +20,14 @@ const db = StartFirebase();
 
 Chart.register(CategoryScale);
 
-/*function showUserData(userNombre, userApellido){
+function showUserData(userData){
+  var userNombre = userData.nombre;
+  var userApellido = userData.apellido;
   localStorage.setItem("userNombre", userNombre);
+  //console.log(userNombre);
   localStorage.setItem("userApellido", userApellido);
-}*/
+  //console.log(userApellido);
+}
 
 //const Dashboard = () => {
   export class RealtimeData extends React.Component {
@@ -43,7 +47,7 @@ Chart.register(CategoryScale);
                 let keyName = childSnapshot.key;
                 let data = childSnapshot.val();
                 records.push({"key":keyName, "data":data});
-                console.log(data);
+                //console.log(data);
             });
             this.setState({tableData:records});
         });
@@ -82,7 +86,7 @@ Chart.register(CategoryScale);
                             <td><div className="progressBar">
        <ProgressBar now={row.data.avance} />
     </div></td>                            <td>{row.data.ultvez}</td>
-                            <td><Link to="/userdata" /*onClick={() => showUserData(row.data.nombre, row.data.apellido)}*/><button><FontAwesomeIcon icon={faChartSimple}/></button></Link></td>
+                            <td><Link to="/userdata" onClick={() => showUserData(row.data)}><button><FontAwesomeIcon icon={faChartSimple}/></button></Link></td>
                             <td><button><FontAwesomeIcon icon={faX}/> </button></td>
                         </tr>
                         )

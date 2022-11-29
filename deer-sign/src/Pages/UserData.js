@@ -10,23 +10,26 @@ import { fa1, fa2, fa3, faA, faAppleWhole, faBriefcase, faCalendarDays, faCalend
 
 import '../SCSS/Elements/_userdata.scss'
 
-/*var userNombre = localStorage.getItem("userNombre");
-var userApellido = localStorage.getItem("userApellido");*/
+
 
 export default class UserData extends Component {
     render(){
+        var userNombre = localStorage.getItem("userNombre");
+        var userApellido = localStorage.getItem("userApellido");
+        var userFullname = userNombre + " " + userApellido;
         return (
             <div>
                 <Navbar />
                 <div className="userdata-container">
                     <div className="userfullname-container">
-                        <h1>NOMBRE COMPLETO</h1>
+                        <h1>{userFullname}</h1>
                     </div>
                     <div className="sections-container">
                         <div class='row'>
                         <div class="col-md-5">
                                 <div class='row'>
                                     <div id="first-section" class="col-md-12">
+                                        <br />
                                         <span className="section-spans">ACTIVIDAD ÚLTIMOS 5 DÍAS</span>
                                         <div className="week-container">
                                             <div className="week-container-first">
@@ -92,6 +95,7 @@ export default class UserData extends Component {
                                 </div>
                             </div>
                             <div id="third-section" class="col-md-6">
+                                <br />
                                 <span id="third-span" className="section-spans">AVANCE POR CATEGORÍAS</span>
                                 <div className="categories-container">
                                     <div className="categories-container-first">
