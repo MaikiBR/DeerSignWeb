@@ -10,7 +10,7 @@ const DonutUserChart =() => {
         ],
         datasets: [{
           label: 'Actividades Completadas',
-          data: [85, 15],
+          data: [85, 0],
           backgroundColor: [
             '#04caed',
             '#d6fffe'

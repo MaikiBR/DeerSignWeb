@@ -12,6 +12,7 @@ import '../SCSS/Elements/_userdata.scss'
 
 
 
+
 export default class UserData extends Component {
     render(){
         var userNombre = localStorage.getItem("userNombre");

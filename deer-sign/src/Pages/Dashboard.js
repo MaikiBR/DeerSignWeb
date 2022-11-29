@@ -17,6 +17,11 @@ import { Link } from "react-router-dom";
 
 const db = StartFirebase();
 
+const myComponent = {
+  overflowX: 'hidden',
+  overflowY: 'scroll'
+};
+
 
 Chart.register(CategoryScale);
 
@@ -29,8 +34,12 @@ function showUserData(userData){
   //console.log(userApellido);
 }
 
+
+
 //const Dashboard = () => {
   export class RealtimeData extends React.Component {
+
+
 
     constructor(){
       super();
@@ -40,7 +49,6 @@ function showUserData(userData){
   }
     componentDidMount() {
       const dbRef = ref(db, 'John Deere/Empleados');
-
         onValue(dbRef, (snapshot)=>{
             let records =[];
             snapshot.forEach(childSnapshot=>{
@@ -52,15 +60,20 @@ function showUserData(userData){
             this.setState({tableData:records});
         });
     }
+
+    
+
+
     render(){
     return (
     <div>
+      <div style={{ height: "1000px", overflow: "auto"   }}>
       <Navbar />
       <div className="dashboard-container">
         <DonutChart/>
         <BarChart />
       </div>
-
+      
         <Table className="table">
                 <thead className="thead-light">
                     <tr>
@@ -84,7 +97,7 @@ function showUserData(userData){
                             <td>{row.data.apellido}</td>
                             <td>{row.data.area}</td>
                             <td><div className="progressBar">
-       <ProgressBar now={row.data.avance} />
+       <ProgressBar now={row.data.progreso} />
     </div></td>                            <td>{row.data.ultvez}</td>
                             <td><Link to="/userdata" onClick={() => showUserData(row.data)}><button><FontAwesomeIcon icon={faChartSimple}/></button></Link></td>
                             <td><button><FontAwesomeIcon icon={faX}/> </button></td>
@@ -93,6 +106,7 @@ function showUserData(userData){
                     })}
                 </tbody>
             </Table>
+            </div>
     </div>
   )
 }}
