@@ -5,25 +5,25 @@ import { Bar } from 'react-chartjs-2';
 const BarChart =() => {
     
     const labels = [
-        'January',
-        'February',
-        'March',
+        'MAX',
+        'AVG',
+        'MIN',
       ];
     const data2 = {
       labels: labels,
       datasets: [{
         indexAxis: 'y',
-        data: [65, 59, 80],
+        data: [85, 45, 10],
         fill: false,
         backgroundColor: [
-          'rgba(255, 99, 132, 0.2)',
-          'rgba(255, 159, 64, 0.2)',
-          'rgba(255, 205, 86, 0.2)',
+          '#08306b',
+          '#08779c',
+          '#21aeb5',
         ],
         borderColor: [
-          'rgb(255, 99, 132)',
-          'rgb(255, 159, 64)',
-          'rgb(255, 205, 86)'
+          '#08306b',
+          '#08779c',
+          '#21aeb5'
         ],
         borderWidth: 1
       }]
@@ -34,13 +34,11 @@ const BarChart =() => {
             <Bar data={data2}
           options={{
             title:{
-              display:true,
               indexAxis: 'y',
               text:'Bar Data Chart',
               fontSize:20
             },
             legend:{
-              display:true,
               position:'right'
             }
           }}/>

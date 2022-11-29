@@ -5,17 +5,15 @@ import { Doughnut } from "react-chartjs-2";
 const DonutChart =() => {
     const data = {
         labels: [
-          'Red',
-          'Blue',
-          'Yellow'
+          'Completadas',
+          'Sin completar'
         ],
         datasets: [{
           label: 'My First Dataset',
-          data: [300, 50, 100],
+          data: [45, 55],
           backgroundColor: [
-            'rgb(255, 99, 132)',
-            'rgb(54, 162, 235)',
-            'rgb(255, 205, 86)'
+            '#f3b70b',
+            '#fedea4'
           ],
           hoverOffset: 4
         }]
