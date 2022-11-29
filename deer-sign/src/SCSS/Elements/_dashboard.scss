@@ -13,17 +13,17 @@
     width: 80%;
 }
 
-.bar-chart-container{
+.chart-container{
     margin-left: 200px;
     margin-top: 50px;
-    width: 100vh;
-    height: 60vh;
+    width: 50vh;
+    height:30vh;
     display: inline-flex;
 }
 
-.doughnut-chart-container {
-    margin-left: 10%;
-    width: 50vh;
+.chart-containerAvg{
+    margin-left: 5%;
+    width: 80vh;
     height:50vh;
     display: inline-block;
 }
