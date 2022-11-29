@@ -1,0 +1,150 @@
+@import "../variables.scss";
+
+.userfullname-container {
+    text-align: center;
+    margin-top: 20px;
+    width: 100%;
+
+    h1 {
+        color: $yellow-deer-sign;
+        font-weight: 600;
+        font-size: 40px;
+        font-family: $font;
+    }
+}
+.sections-container {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.row {
+    margin-left: 100px;
+}
+
+.user-donutchart {
+    width: 32vh;
+    height: 32vh;
+    vertical-align: middle;
+    margin-left: 120px;
+    display: flex;
+}
+
+#first-section, #second-section {
+    height: 40vh;
+}
+
+#first-section, #second-section, #third-section {
+    background-color: $gray-deer-sign;
+    border: 5px solid $white;
+    text-align: center;
+}
+
+#third-section {
+    height: 80vh;
+}
+
+.section-spans {
+    font-family: $font;
+    font-size: 26px;
+    color: #7a7a7a;
+    font-weight: 500;
+}
+
+#third-span {
+    font-weight: bolder;
+}
+
+.week-container-first {
+    display: flex;
+    margin: 10px;
+}
+
+.week-container-second {
+    display: flex;
+    margin: 10px;
+    padding: 5;
+}
+
+.week-card + .week-card {
+    margin-left: 10px;
+}
+
+.week-card.week {
+    background-color: #E5E5E5;
+    font-weight: bold;
+}
+
+.categories-container {
+    text-align: center;
+    width: 100%;
+    margin-top: 10%;
+}
+
+.categories-container-first{
+    display: flex;
+    margin: 10px;
+}
+
+.category-card {
+    margin: 5px;
+}
+
+.categories-container-second{
+    display: flex;
+    margin: 10px;
+}
+
+.card-icon {
+    width: 54px;
+    height: 54px;
+    color: $white;
+}
+
+.card-title {
+    font-family: Roboto;
+    color: $white;
+}
+
+.card-progress {
+    text-align: right;
+    font-family: $font;
+    color: $white;
+}
+
+#colors-card {
+    background-color: #eea236;
+}
+
+#abc-card {
+    background-color: #42a5f5;
+}
+
+#sports-card {
+    background-color: #92d36e;
+}
+
+#food-card {
+    background-color: #ff5d55;
+}
+
+#verbs-card {
+    background-color: #3CA99B;
+}
+
+#drinks-card {
+    background-color: #c238eb;
+}
+
+#tools-card {
+    background-color: #929292;
+}
+
+#animals-card {
+    background-color: #d68227;
+}
+
+
+/*.row > div {
+    border: 1px dotted;
+    text-align: center;
+}*/

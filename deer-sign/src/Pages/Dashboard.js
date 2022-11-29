@@ -13,14 +13,21 @@ import {Table} from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChartSimple, faX } from '@fortawesome/free-solid-svg-icons'
 import ProgressBar from 'react-bootstrap/ProgressBar';
+import { Link } from "react-router-dom";
 
 const db = StartFirebase();
 
 
 Chart.register(CategoryScale);
 
+/*function showUserData(userNombre, userApellido){
+  localStorage.setItem("userNombre", userNombre);
+  localStorage.setItem("userApellido", userApellido);
+}*/
+
 //const Dashboard = () => {
   export class RealtimeData extends React.Component {
+
     constructor(){
       super();
       this.state = {
@@ -75,7 +82,7 @@ Chart.register(CategoryScale);
                             <td><div className="progressBar">
        <ProgressBar now={row.data.avance} />
     </div></td>                            <td>{row.data.ultvez}</td>
-                            <td><button><FontAwesomeIcon icon={faChartSimple}/></button></td>
+                            <td><Link to="/userdata" /*onClick={() => showUserData(row.data.nombre, row.data.apellido)}*/><button><FontAwesomeIcon icon={faChartSimple}/></button></Link></td>
                             <td><button><FontAwesomeIcon icon={faX}/> </button></td>
                         </tr>
                         )
